@@ -4,7 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.punna.calculator.MainActivity">
+    tools:context="com.example.punna.calci.MainActivity">
+
+    <Button
+        android:id="@+id/allclear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minHeight="48dp"
+        android:minWidth="48dp"
+        android:text="AC"
+        app:layout_constraintBaseline_toBaselineOf="@+id/minus"
+        app:layout_constraintStart_toEndOf="@+id/multi" />
+
+    <Button
+        android:id="@+id/clear1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minHeight="48dp"
+        android:minWidth="48dp"
+        android:text="C"
+        app:layout_constraintBaseline_toBaselineOf="@+id/multi"
+        app:layout_constraintStart_toEndOf="@+id/divide" />
 
     <Button
         android:id="@+id/buttonNeg"
