@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonadd = (Button) findViewById(R.id.plus);
         Button buttonminus = (Button) findViewById(R.id.minus);
         Button buttondivide = (Button) findViewById(R.id.divide);
+        Button clear=(Button) findViewById(R.id.clear1);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -63,6 +64,17 @@ public class MainActivity extends AppCompatActivity {
         button8.setOnClickListener(listener);
         button9.setOnClickListener(listener);
         buttondot.setOnClickListener(listener);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String x=newnum.getText().toString();
+                if(x.length()!=0) {
+                    x = x.substring(0, x.length() - 1);
+                }
+                newnum.setText(x);
+            }
+        });
+
 
         View.OnClickListener oplistener = new View.OnClickListener() {
             @Override
@@ -86,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         buttonmultiply.setOnClickListener(oplistener);
         buttonequals.setOnClickListener(oplistener);
 
+
         Button buttonneg= (Button)findViewById(R.id.buttonNeg);
         buttonneg.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -104,6 +117,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        Button allclear=(Button) findViewById(R.id.allclear);
+        allclear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                operand1=null;
+                operand2=null;
+                pendingoperation="=";
+                newnum.setText("");
+                result.setText("");
+            }
+        });
+
+
 
     }
 
